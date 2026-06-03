@@ -195,6 +195,68 @@ a{
     opacity: 0.5;
 }
 
+/* Top Songs heading styles */
+.top-songs-heading{
+    color: #1DB954; /* Spotify green */
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.2px;
+    display: inline-block;
+}
+
+.top-songs-heading::after{
+    content: '';
+    display: inline-block;
+    width: 36px;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(27,215,96,0.9), rgba(255,255,255,0));
+    margin-left: 0.75rem;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+
+/* Top Songs list contents */
+.songs-container{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.song{
+    background: linear-gradient(180deg, #1e1e1e, #2a2a2a);
+    padding: 0.6rem 0.9rem;
+    border-radius: 0.6rem;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+    min-width: 160px;
+    max-width: 220px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.song:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.6);
+    background: linear-gradient(180deg, #232323, #2f2f2f);
+}
+
+.song:active{
+    transform: translateY(-2px);
+}
+
+.song::after{
+    content: '\f04b'; /* FontAwesome play icon as pseudo */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-left: auto;
+    opacity: 0.85;
+}
+
 .footer{
     height: 300px;
     display: flex;
