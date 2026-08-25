@@ -14,4 +14,4 @@ Open `http://localhost:3000`. Locally, new accounts are stored in `data/users.db
 
 ## Vercel deployment
 
-Create a Vercel Postgres/Neon integration for the project and connect it to the deployment. Vercel will provide the `POSTGRES_URL` environment variable. The `api` routes create the `users` table automatically on the first signup or login request.
+Create a Vercel Postgres/Neon integration for the project and connect it to the deployment. In Vercel, open **Project Settings > Integrations**, add a Postgres provider, and make sure it is connected to the `main` deployment environment. Vercel must provide the `POSTGRES_URL` environment variable. Redeploy after connecting it. The `api` routes create the `users` table automatically on the first signup or login request.

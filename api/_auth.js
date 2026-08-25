@@ -1,6 +1,10 @@
 import { sql } from '@vercel/postgres';
 import { randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
 
+export function databaseIsConfigured() {
+  return Boolean(process.env.POSTGRES_URL);
+}
+
 export async function ensureUsersTable() {
   await sql`
     CREATE TABLE IF NOT EXISTS users (
