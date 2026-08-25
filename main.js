@@ -56,7 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
-      const result = await response.json();
+      const responseText = await response.text();
+      let result;
+      try {
+        result = JSON.parse(responseText);
+      } catch {
+        throw new Error('The authentication service is not configured for this deployment.');
+      }
       if (!response.ok) throw new Error(result.error || 'Something went wrong.');
       localStorage.setItem('spotify-user', JSON.stringify(result.user));
       authMessage.className = 'auth-message success';
