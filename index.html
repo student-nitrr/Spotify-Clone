@@ -59,7 +59,9 @@
                 <div class="sticky-nav-options">
                     <button class="badge nav-item hide">Explore Premium</button>
                     <button class="badge nav-item dark-badge"><i class="fa-regular fa-circle-down" style="margin-right:5px;"></i>Install App</button>
-                    <i class="fa-regular fa-user nav-item"></i>
+                    <button class="user-menu nav-item" id="user-button" type="button" aria-label="Open account menu">
+                        <i class="fa-regular fa-user"></i>
+                    </button>
                 </div>
             </div>
 
@@ -151,6 +153,29 @@
             </div>
             <div class="controls"></div>
         </div>
+    </div>
+
+    <div class="auth-overlay" id="auth-overlay" aria-hidden="true">
+        <section class="auth-panel" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+            <button class="auth-close" id="auth-close" type="button" aria-label="Close account dialog">&times;</button>
+            <div class="auth-brand"><i class="fa-brands fa-spotify"></i> Spotify</div>
+            <h1 id="auth-title">Welcome back</h1>
+            <p class="auth-subtitle" id="auth-subtitle">Log in to keep your music within reach.</p>
+            <div class="auth-tabs" role="tablist">
+                <button class="auth-tab active" id="login-tab" type="button" role="tab">Log in</button>
+                <button class="auth-tab" id="signup-tab" type="button" role="tab">Sign up</button>
+            </div>
+            <form id="auth-form">
+                <label for="auth-name" id="name-label" class="hidden">Name</label>
+                <input id="auth-name" name="name" type="text" placeholder="Name" autocomplete="name" class="hidden">
+                <label for="auth-email">Email address</label>
+                <input id="auth-email" name="email" type="email" placeholder="Email address" autocomplete="email" required>
+                <label for="auth-password">Password</label>
+                <input id="auth-password" name="password" type="password" placeholder="Password" autocomplete="current-password" minlength="8" required>
+                <button class="auth-submit" type="submit" id="auth-submit">Log in</button>
+                <p class="auth-message" id="auth-message" role="status"></p>
+            </form>
+        </section>
     </div>
     <script src="config.js"></script>
     <script src="main.js"></script>
